@@ -52,9 +52,12 @@ class SquirrelServerHandler(BaseHTTPRequestHandler):
     def getRequestData(self):
         length = int(self.headers["Content-Length"])
         body = self.rfile.read(length).decode("utf-8")
-        data = parse_qs(body)
-        for key in data:
-            data[key] = data[key][0]
+        print('\n\n\n Body in request data', body)
+        #  Body in request data {"name":"Fluffy","size":"large"}
+        # data = parse_qs(body)
+        data = json.loads(body)
+        print('\n\n\n data in request data', data)
+        print(data['name'], data['size'])
         return data
 
     def parsePath(self):
