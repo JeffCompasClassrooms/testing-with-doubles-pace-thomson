@@ -32,9 +32,17 @@ def describe_MyDB():
             mock_open.assert_called_once_with("mydatabase.db", "wb")
             mock_dump.assert_called_once_with([], mock_open.return_value)
 
-        @todo
         def it_does_not_create_database_if_it_already_exists(mocker):
-            pass
+            mock_isfile = mocker.patch("os.path.isfile", return_value=True)
+            mock_open = mocker.patch("builtins.open", mocker.mock_open())
+            mock_dump = mocker.patch("pickle.dump")
+
+            db = MyDB("mydatabase.db")
+
+            assert db.fname == "mydatabase.db"
+            mock_isfile.assert_called_once_with("mydatabase.db")
+            mock_open.assert_not_called()
+            mock_dump.assert_not_called()
     
     def describe_loadStrings():
         @todo
