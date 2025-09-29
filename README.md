@@ -22,8 +22,3 @@ Write a test suite for each of two different Python programs using test doubles 
 - Continue using describe blocks to appropriately describe components (classes, methods, etc.). Thoroughly and intentionally plan and design your test cases to achieve full test coverage of the test subjects. Try to maximize the number of test cases and minimize the number of assertions in each test case.
 
 - Your submission will be evaluated according to the quality, variety, coverage, and intentional design of your test cases. You must implement all test cases using test doubles, and you will be graded according to your methodical and correct usage of each type of double.
-
-
-## Proompt
-
-You can find the instructions for this assignment in @README.md. I am working on the first part of instructions, which is working on testing mydb. Can you help me with the first function that has the @todo decorator in @template_test_mydb.py  , if that's what it's called. Let me know if i referred to that correctly. 
